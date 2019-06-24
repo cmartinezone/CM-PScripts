@@ -16,7 +16,7 @@ foreach ($Drive in $Drives) {
         # Get the list of protectors for each drive encrypted and unlocked
         $DriveKeyProtectors = $Drive.KeyProtector
 
-        #Go through eacheach protector 
+        #Go through each protector
         foreach ($DriveKeyProtector in  $DriveKeyProtectors) {
         
             #If The Protector Type is equal to "RecoveryPassword"
