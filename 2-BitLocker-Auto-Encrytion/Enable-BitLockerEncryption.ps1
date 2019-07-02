@@ -1,7 +1,7 @@
 
  
- #Author: Carlos Martinez - 7-1-2019
-
+ #Author: Carlos Martinez - 7-1-2019 : GitHub @cmartinezone
+ 
 #Get-TPM Status
 $TPM = Get-Tpm | Select-Object -Property TpmPresent, AutoProvisioning -ErrorAction SilentlyContinue
 
@@ -11,13 +11,16 @@ $DriveStatus = Get-BitLockerVolume -MountPoint "C:\" | Select-Object -Property V
 #If Drive is fully decrypted and TPM is anable and TPM is actived
 if (($DriveStatus.VolumeStatus -eq "FullyDecrypted") -and  ($TPM.TpmPresent -eq "True") -and ($TPM.AutoProvisioning -eq "Enabled")) {
 
-    #Extract Pin number from computername
+    #Extract Pin number from computername if 6 digits number is included on the name
     $PinNumber = $env:COMPUTERNAME -replace "[^0-9]" , ''
-
+    
+    #Example Default Pin number set if the computer name doesn't include numbers:
+    #$PinNumber = "123456"
+    
     #Create security pin
     $SecureString = ConvertTo-SecureString $PinNumber -AsPlainText -Force
 
-    #Add Recovery Key to the drive requires by GPO
+    #Add RecoveryKey to the drive requires by GPO
     Add-BitLockerKeyProtector -MountPoint "C:" -RecoveryPasswordProtector
 
     #Enable Encryption
