@@ -1,6 +1,5 @@
-
- 
- #Author: Carlos Martinez - 7-1-2019 : GitHub @cmartinezone
+#Author: Carlos Martinez  - GitHub @cmartinezone
+#Date: 7-1-2019 
  
 #Get-TPM Status
 $TPM = Get-Tpm | Select-Object -Property TpmPresent, AutoProvisioning -ErrorAction SilentlyContinue
