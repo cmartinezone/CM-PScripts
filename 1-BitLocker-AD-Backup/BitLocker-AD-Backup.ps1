@@ -1,5 +1,5 @@
 
-#Author Carlos Martinez
+#Author Carlos Martinez GitHub @cmartinezone
 #Date 6/23/2019
 
 #Description: This script backup to Active Directory the BitLocker Recovery keys for one or more drives on the system.
