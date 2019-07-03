@@ -13,7 +13,7 @@ if (($DriveStatus.VolumeStatus -eq "FullyDecrypted") -and  ($TPM.TpmPresent -eq 
     #Extract Pin number from computername if 6 digits number is included on the name
     $PinNumber = $env:COMPUTERNAME -replace "[^0-9]" , ''
     
-    #Example Default Pin number set if the computer name doesn't include numbers:
+    #Example Default Pin number set if the computer name doesn't contain numbers:
     #$PinNumber = "123456"
     
     #Create security pin
