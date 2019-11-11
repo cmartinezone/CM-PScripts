@@ -1,6 +1,6 @@
 
 #Carlos Martinez Date: 7/22/2019 GitHub @cmartinezone
-#Update: 11-01-2019 adding the 1803 variation ID.
+#Update: 11-01-2019 adding new 1803 variation ID update.
 
 #DESCRIPTION:  Set Windows 1803 update as hidden on windows updates
 #The script hides the Windows 1803 Feature updates from windows updates list.
